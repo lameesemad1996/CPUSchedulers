@@ -1,0 +1,11 @@
+debug/main.o
+debug/mainwindow.o
+debug/fcfs_dialog.o
+debug/sjf_dialog.o
+debug/priority_dialog.o
+debug/rr_dialog.o
+debug/moc_mainwindow.o
+debug/moc_fcfs_dialog.o
+debug/moc_sjf_dialog.o
+debug/moc_priority_dialog.o
+debug/moc_rr_dialog.o

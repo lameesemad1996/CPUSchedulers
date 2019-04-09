@@ -1,0 +1,11 @@
+release/main.o
+release/mainwindow.o
+release/fcfs_dialog.o
+release/sjf_dialog.o
+release/priority_dialog.o
+release/rr_dialog.o
+release/moc_mainwindow.o
+release/moc_fcfs_dialog.o
+release/moc_sjf_dialog.o
+release/moc_priority_dialog.o
+release/moc_rr_dialog.o
