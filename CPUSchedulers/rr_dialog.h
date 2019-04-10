@@ -14,6 +14,12 @@ class RR_Dialog : public QDialog
 public:
     explicit RR_Dialog(QWidget *parent = nullptr);
     ~RR_Dialog();
+    void createProcess();
+
+private slots:
+    void on_pushButton_addProcess_clicked();
+
+    void on_pushButton_Go_clicked();
 
 private:
     Ui::RR_Dialog *ui;

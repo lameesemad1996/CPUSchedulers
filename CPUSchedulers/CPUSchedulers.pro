@@ -27,24 +27,36 @@ CONFIG += c++11
 SOURCES += \
         main.cpp \
         mainwindow.cpp \
-    fcfs_dialog.cpp \
     sjf_dialog.cpp \
     priority_dialog.cpp \
-    rr_dialog.cpp
+    rr_dialog.cpp \
+    fcfs_dialog.cpp \
+    fcfs_op_dialog.cpp \
+    rr_op_dialog.cpp \
+    sjf_op_dialog.cpp \
+    priority_op_dialog.cpp
 
 HEADERS += \
         mainwindow.h \
-    fcfs_dialog.h \
     sjf_dialog.h \
     priority_dialog.h \
-    rr_dialog.h
+    rr_dialog.h \
+    fcfs_dialog.h \
+    fcfs_op_dialog.h \
+    rr_op_dialog.h \
+    sjf_op_dialog.h \
+    priority_op_dialog.h
 
 FORMS += \
         mainwindow.ui \
-    fcfs_dialog.ui \
     sjf_dialog.ui \
     priority_dialog.ui \
-    rr_dialog.ui
+    rr_dialog.ui \
+    fcfs_dialog.ui \
+    fcfs_op_dialog.ui \
+    rr_op_dialog.ui \
+    sjf_op_dialog.ui \
+    priority_op_dialog.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

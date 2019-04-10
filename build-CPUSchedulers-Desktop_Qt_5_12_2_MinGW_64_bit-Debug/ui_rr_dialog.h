@@ -12,29 +12,46 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QDialog>
-#include <QtWidgets/QDialogButtonBox>
+#include <QtWidgets/QPushButton>
+#include <QtWidgets/QVBoxLayout>
+#include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
 
 class Ui_RR_Dialog
 {
 public:
-    QDialogButtonBox *buttonBox;
+    QPushButton *pushButton_addProcess;
+    QWidget *verticalLayoutWidget_2;
+    QVBoxLayout *verticalLayout_2;
+    QPushButton *pushButton_Go;
 
     void setupUi(QDialog *RR_Dialog)
     {
         if (RR_Dialog->objectName().isEmpty())
             RR_Dialog->setObjectName(QString::fromUtf8("RR_Dialog"));
-        RR_Dialog->resize(400, 300);
-        buttonBox = new QDialogButtonBox(RR_Dialog);
-        buttonBox->setObjectName(QString::fromUtf8("buttonBox"));
-        buttonBox->setGeometry(QRect(290, 20, 81, 241));
-        buttonBox->setOrientation(Qt::Vertical);
-        buttonBox->setStandardButtons(QDialogButtonBox::Cancel|QDialogButtonBox::Ok);
+        RR_Dialog->resize(921, 555);
+        pushButton_addProcess = new QPushButton(RR_Dialog);
+        pushButton_addProcess->setObjectName(QString::fromUtf8("pushButton_addProcess"));
+        pushButton_addProcess->setGeometry(QRect(10, 475, 896, 28));
+        QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(pushButton_addProcess->sizePolicy().hasHeightForWidth());
+        pushButton_addProcess->setSizePolicy(sizePolicy);
+        verticalLayoutWidget_2 = new QWidget(RR_Dialog);
+        verticalLayoutWidget_2->setObjectName(QString::fromUtf8("verticalLayoutWidget_2"));
+        verticalLayoutWidget_2->setGeometry(QRect(10, 16, 896, 452));
+        verticalLayout_2 = new QVBoxLayout(verticalLayoutWidget_2);
+        verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
+        verticalLayout_2->setContentsMargins(0, 0, 0, 0);
+        pushButton_Go = new QPushButton(RR_Dialog);
+        pushButton_Go->setObjectName(QString::fromUtf8("pushButton_Go"));
+        pushButton_Go->setGeometry(QRect(10, 520, 896, 28));
+        sizePolicy.setHeightForWidth(pushButton_Go->sizePolicy().hasHeightForWidth());
+        pushButton_Go->setSizePolicy(sizePolicy);
 
         retranslateUi(RR_Dialog);
-        QObject::connect(buttonBox, SIGNAL(accepted()), RR_Dialog, SLOT(accept()));
-        QObject::connect(buttonBox, SIGNAL(rejected()), RR_Dialog, SLOT(reject()));
 
         QMetaObject::connectSlotsByName(RR_Dialog);
     } // setupUi
@@ -42,6 +59,8 @@ public:
     void retranslateUi(QDialog *RR_Dialog)
     {
         RR_Dialog->setWindowTitle(QApplication::translate("RR_Dialog", "Dialog", nullptr));
+        pushButton_addProcess->setText(QApplication::translate("RR_Dialog", "Add Process", nullptr));
+        pushButton_Go->setText(QApplication::translate("RR_Dialog", "GO", nullptr));
     } // retranslateUi
 
 };
