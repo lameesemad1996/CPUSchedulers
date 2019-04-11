@@ -2,6 +2,15 @@
 #define FCFS_DIALOG_H
 
 #include <QDialog>
+#include <QWidget>
+#include <QLabel>
+#include <QLayout>
+#include <QLineEdit>
+#include<QHBoxLayout>
+#include <string>
+#include<iostream>
+#include "fcfs.h"
+using namespace std;
 
 namespace Ui {
 class FCFS_Dialog;
@@ -16,12 +25,17 @@ public:
     explicit FCFS_Dialog(QWidget *parent = nullptr);
     ~FCFS_Dialog();
     void createProcess();
+    QLineEdit* runLineEditsPtrs[20];
+    QLineEdit* arriveLineEditsPtrs[20];
+    static process* inputProcessesPtrs[20];
+    static int length;
 
 
 private slots:
     void on_pushButton_addProcess_clicked();
 
     void on_pushButton_Go_clicked();
+
 
 private:
     Ui::FCFS_Dialog *ui;

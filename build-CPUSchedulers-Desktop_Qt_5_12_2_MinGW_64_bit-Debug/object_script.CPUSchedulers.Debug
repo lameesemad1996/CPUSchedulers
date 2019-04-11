@@ -8,6 +8,7 @@ debug/fcfs_op_dialog.o
 debug/rr_op_dialog.o
 debug/sjf_op_dialog.o
 debug/priority_op_dialog.o
+debug/fcfs.o
 debug/moc_mainwindow.o
 debug/moc_sjf_dialog.o
 debug/moc_priority_dialog.o

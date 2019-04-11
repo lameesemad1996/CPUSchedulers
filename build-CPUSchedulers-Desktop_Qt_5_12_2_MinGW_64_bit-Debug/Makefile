@@ -234,6 +234,7 @@ Makefile: ../CPUSchedulers/CPUSchedulers.pro C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mk
 		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/features/yacc.prf \
 		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/features/lex.prf \
 		../CPUSchedulers/CPUSchedulers.pro \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/lib/Qt5Charts.prl \
 		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/lib/Qt5Widgets.prl \
 		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/lib/Qt5Gui.prl \
 		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/lib/Qt5Core.prl \
@@ -410,6 +411,7 @@ C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/features/exceptions.prf:
 C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/features/yacc.prf:
 C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/features/lex.prf:
 ../CPUSchedulers/CPUSchedulers.pro:
+C:/Qt/Qt5.12.2/5.12.2/mingw73_64/lib/Qt5Charts.prl:
 C:/Qt/Qt5.12.2/5.12.2/mingw73_64/lib/Qt5Widgets.prl:
 C:/Qt/Qt5.12.2/5.12.2/mingw73_64/lib/Qt5Gui.prl:
 C:/Qt/Qt5.12.2/5.12.2/mingw73_64/lib/Qt5Core.prl:

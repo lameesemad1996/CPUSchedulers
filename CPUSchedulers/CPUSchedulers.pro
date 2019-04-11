@@ -5,6 +5,7 @@
 #-------------------------------------------------
 
 QT       += core gui
+QT       += charts
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -34,7 +35,8 @@ SOURCES += \
     fcfs_op_dialog.cpp \
     rr_op_dialog.cpp \
     sjf_op_dialog.cpp \
-    priority_op_dialog.cpp
+    priority_op_dialog.cpp \
+    fcfs.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -45,7 +47,8 @@ HEADERS += \
     fcfs_op_dialog.h \
     rr_op_dialog.h \
     sjf_op_dialog.h \
-    priority_op_dialog.h
+    priority_op_dialog.h \
+    fcfs.h
 
 FORMS += \
         mainwindow.ui \

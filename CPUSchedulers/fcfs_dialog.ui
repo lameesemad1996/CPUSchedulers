@@ -16,8 +16,8 @@
   <widget class="QPushButton" name="pushButton_addProcess">
    <property name="geometry">
     <rect>
-     <x>11</x>
-     <y>470</y>
+     <x>10</x>
+     <y>480</y>
      <width>891</width>
      <height>28</height>
     </rect>
@@ -38,7 +38,7 @@
      <x>11</x>
      <y>11</y>
      <width>891</width>
-     <height>451</height>
+     <height>461</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout_2"/>

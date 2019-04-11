@@ -33,7 +33,7 @@ public:
         FCFS_Dialog->resize(918, 546);
         pushButton_addProcess = new QPushButton(FCFS_Dialog);
         pushButton_addProcess->setObjectName(QString::fromUtf8("pushButton_addProcess"));
-        pushButton_addProcess->setGeometry(QRect(11, 470, 891, 28));
+        pushButton_addProcess->setGeometry(QRect(10, 480, 891, 28));
         QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
@@ -41,7 +41,7 @@ public:
         pushButton_addProcess->setSizePolicy(sizePolicy);
         verticalLayoutWidget_2 = new QWidget(FCFS_Dialog);
         verticalLayoutWidget_2->setObjectName(QString::fromUtf8("verticalLayoutWidget_2"));
-        verticalLayoutWidget_2->setGeometry(QRect(11, 11, 891, 451));
+        verticalLayoutWidget_2->setGeometry(QRect(11, 11, 891, 461));
         verticalLayout_2 = new QVBoxLayout(verticalLayoutWidget_2);
         verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
         verticalLayout_2->setContentsMargins(0, 0, 0, 0);
