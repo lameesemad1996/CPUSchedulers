@@ -31,6 +31,7 @@ public:
         if (RR_Dialog->objectName().isEmpty())
             RR_Dialog->setObjectName(QString::fromUtf8("RR_Dialog"));
         RR_Dialog->resize(921, 555);
+        RR_Dialog->setStyleSheet(QString::fromUtf8("background-color: rgb(240, 239, 255);"));
         pushButton_addProcess = new QPushButton(RR_Dialog);
         pushButton_addProcess->setObjectName(QString::fromUtf8("pushButton_addProcess"));
         pushButton_addProcess->setGeometry(QRect(10, 475, 896, 28));
@@ -39,6 +40,20 @@ public:
         sizePolicy.setVerticalStretch(0);
         sizePolicy.setHeightForWidth(pushButton_addProcess->sizePolicy().hasHeightForWidth());
         pushButton_addProcess->setSizePolicy(sizePolicy);
+        QFont font;
+        font.setPointSize(10);
+        font.setBold(true);
+        font.setWeight(75);
+        pushButton_addProcess->setFont(font);
+        pushButton_addProcess->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"	border: 1px solid gray;\n"
+"	background-color:rgb(208, 201, 255);\n"
+"}\n"
+"QPushButton:pressed {\n"
+"    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                      stop: 0 #dadbde, stop: 1 #f6f7fa);\n"
+"}\n"
+""));
         verticalLayoutWidget_2 = new QWidget(RR_Dialog);
         verticalLayoutWidget_2->setObjectName(QString::fromUtf8("verticalLayoutWidget_2"));
         verticalLayoutWidget_2->setGeometry(QRect(10, 16, 896, 452));
@@ -50,6 +65,16 @@ public:
         pushButton_Go->setGeometry(QRect(10, 520, 896, 28));
         sizePolicy.setHeightForWidth(pushButton_Go->sizePolicy().hasHeightForWidth());
         pushButton_Go->setSizePolicy(sizePolicy);
+        pushButton_Go->setFont(font);
+        pushButton_Go->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"	border: 1px solid gray;\n"
+"	background-color:rgb(208, 201, 255);\n"
+"}\n"
+"QPushButton:pressed {\n"
+"    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                      stop: 0 #dadbde, stop: 1 #f6f7fa);\n"
+"}\n"
+""));
 
         retranslateUi(RR_Dialog);
 

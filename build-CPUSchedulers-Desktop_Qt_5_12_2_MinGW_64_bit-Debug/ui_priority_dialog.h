@@ -33,14 +33,18 @@ public:
         if (Priority_Dialog->objectName().isEmpty())
             Priority_Dialog->setObjectName(QString::fromUtf8("Priority_Dialog"));
         Priority_Dialog->resize(878, 567);
+        Priority_Dialog->setStyleSheet(QString::fromUtf8("background-color: rgb(240, 239, 255);"));
         checkBox = new QCheckBox(Priority_Dialog);
         checkBox->setObjectName(QString::fromUtf8("checkBox"));
-        checkBox->setGeometry(QRect(40, 500, 101, 20));
+        checkBox->setGeometry(QRect(40, 500, 121, 20));
         QSizePolicy sizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
         sizePolicy.setHeightForWidth(checkBox->sizePolicy().hasHeightForWidth());
         checkBox->setSizePolicy(sizePolicy);
+        QFont font;
+        font.setPointSize(10);
+        checkBox->setFont(font);
         verticalLayoutWidget = new QWidget(Priority_Dialog);
         verticalLayoutWidget->setObjectName(QString::fromUtf8("verticalLayoutWidget"));
         verticalLayoutWidget->setGeometry(QRect(20, 16, 841, 441));
@@ -55,11 +59,35 @@ public:
         sizePolicy1.setVerticalStretch(0);
         sizePolicy1.setHeightForWidth(pushButton_addProcess->sizePolicy().hasHeightForWidth());
         pushButton_addProcess->setSizePolicy(sizePolicy1);
+        QFont font1;
+        font1.setPointSize(10);
+        font1.setBold(true);
+        font1.setWeight(75);
+        pushButton_addProcess->setFont(font1);
+        pushButton_addProcess->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"	border: 1px solid gray;\n"
+"	background-color:rgb(208, 201, 255);\n"
+"}\n"
+"QPushButton:pressed {\n"
+"    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                      stop: 0 #dadbde, stop: 1 #f6f7fa);\n"
+"}\n"
+""));
         pushButton_Go = new QPushButton(Priority_Dialog);
         pushButton_Go->setObjectName(QString::fromUtf8("pushButton_Go"));
         pushButton_Go->setGeometry(QRect(20, 530, 841, 28));
         sizePolicy1.setHeightForWidth(pushButton_Go->sizePolicy().hasHeightForWidth());
         pushButton_Go->setSizePolicy(sizePolicy1);
+        pushButton_Go->setFont(font1);
+        pushButton_Go->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"	border: 1px solid gray;\n"
+"	background-color: 	rgb(208, 201, 255);\n"
+"}\n"
+"QPushButton:pressed {\n"
+"    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                      stop: 0 #dadbde, stop: 1 #f6f7fa);\n"
+"}\n"
+""));
 
         retranslateUi(Priority_Dialog);
 

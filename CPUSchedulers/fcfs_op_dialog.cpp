@@ -21,6 +21,9 @@
 #include <list>
 #include <iterator>
 #include <cstdlib>
+#include <QColor>
+#include<Qt>
+
 using namespace std;
 
 FCFS_OP_Dialog::FCFS_OP_Dialog(QWidget *parent) :
@@ -76,8 +79,9 @@ void FCFS_OP_Dialog::showOP()
         {
             if(it->startTime > 0)
             {
-                sets[i] = new QtCharts::QBarSet(QString::fromStdString("Empty"));
+                sets[i] = new QtCharts::QBarSet(QString::fromStdString(""));
                 *sets[i] << (it->startTime);
+                sets[i]->setColor(Qt::white);
                 series->append(sets[i]);
                 i++;
                 length++;
@@ -87,15 +91,15 @@ void FCFS_OP_Dialog::showOP()
         {
              if(prevEndTime < (it->startTime))
              {
-                 sets[i] = new QtCharts::QBarSet(QString::fromStdString("Empty"));
+                 sets[i] = new QtCharts::QBarSet(QString::fromStdString(""));
                  *sets[i] << ((it->startTime) - prevEndTime);
+                 sets[i]->setColor(Qt::white);
                  series->append(sets[i]);
                  i++;
                  length++;
              }
         }
         sets[i] = new QtCharts::QBarSet(QString::fromStdString(it->processName));
-
         *sets[i] << ((it->endTime)-(it->startTime));
         series->append(sets[i]);
         prevEndTime = it->endTime;
@@ -108,6 +112,9 @@ void FCFS_OP_Dialog::showOP()
     chart->setTitle("Gantt Chart");
 
     QtCharts::QValueAxis *axisX = new QtCharts::QValueAxis();
+    axisX->setTickType(QtCharts::QValueAxis::TickType::TicksDynamic);
+    axisX->setTickInterval(1);
+    axisX->setTickAnchor(0);
     chart->addAxis(axisX, Qt::AlignBottom);
     series->attachAxis(axisX);
 

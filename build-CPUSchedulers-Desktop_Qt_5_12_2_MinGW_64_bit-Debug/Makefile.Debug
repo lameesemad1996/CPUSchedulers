@@ -864,6 +864,10 @@ debug/moc_fcfs_op_dialog.cpp: ../CPUSchedulers/fcfs_op_dialog.h \
 		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtGui/qpen.h \
 		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtGui/qtextoption.h \
 		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/QHBoxLayout \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/QMainWindow \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qmainwindow.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qtabwidget.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtGui/qicon.h \
 		debug/moc_predefs.h \
 		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/bin/moc.exe
 	'C:\Qt\Qt5.12.2\5.12.2\mingw73_64\bin\moc.exe' $(DEFINES) --include 'E:/Computer Year 3/CPUSched/CPUSchedulers/build-CPUSchedulers-Desktop_Qt_5_12_2_MinGW_64_bit-Debug/debug/moc_predefs.h' -IC:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/win32-g++ -I'E:/Computer Year 3/CPUSched/CPUSchedulers/CPUSchedulers' -IC:/Qt/Qt5.12.2/5.12.2/mingw73_64/include -IC:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCharts -IC:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets -IC:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtGui -IC:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtANGLE -IC:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCore -I. -IC:/Qt/Qt5.12.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Qt5.12.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Qt5.12.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Qt5.12.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Qt5.12.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Qt5.12.2/Tools/mingw730_64/x86_64-w64-mingw32/include ../CPUSchedulers/fcfs_op_dialog.h -o debug/moc_fcfs_op_dialog.cpp
@@ -2084,7 +2088,10 @@ debug/fcfs_dialog.o: ../CPUSchedulers/fcfs_dialog.cpp ../CPUSchedulers/fcfs_dial
 		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qabstractbutton.h \
 		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtGui/qicon.h \
 		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/QVBoxLayout \
-		../CPUSchedulers/fcfs_op_dialog.h
+		../CPUSchedulers/fcfs_op_dialog.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/QMainWindow \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qmainwindow.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qtabwidget.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug/fcfs_dialog.o ../CPUSchedulers/fcfs_dialog.cpp
 
 debug/fcfs_op_dialog.o: ../CPUSchedulers/fcfs_op_dialog.cpp ../CPUSchedulers/fcfs_op_dialog.h \
@@ -2210,6 +2217,10 @@ debug/fcfs_op_dialog.o: ../CPUSchedulers/fcfs_op_dialog.cpp ../CPUSchedulers/fcf
 		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtGui/qpen.h \
 		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtGui/qtextoption.h \
 		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/QHBoxLayout \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/QMainWindow \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qmainwindow.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qtabwidget.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtGui/qicon.h \
 		ui_fcfs_op_dialog.h \
 		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCore/QVariant \
 		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/QApplication \
@@ -2221,8 +2232,8 @@ debug/fcfs_op_dialog.o: ../CPUSchedulers/fcfs_op_dialog.cpp ../CPUSchedulers/fcf
 		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtGui/qinputmethod.h \
 		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/QDialogButtonBox \
 		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qdialogbuttonbox.h \
-		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCharts/QBarCategoryAxis \
-		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCharts/qbarcategoryaxis.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCharts/QChartView \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCharts/qchartview.h \
 		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCharts/QAbstractAxis \
 		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCharts/qabstractaxis.h \
 		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCharts/QChartGlobal \
@@ -2230,30 +2241,40 @@ debug/fcfs_op_dialog.o: ../CPUSchedulers/fcfs_op_dialog.cpp ../CPUSchedulers/fcf
 		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCore/QtGlobal \
 		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtGui/QPen \
 		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtGui/QFont \
-		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCharts/QBarSet \
-		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCharts/qbarset.h \
-		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtGui/QBrush \
-		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCharts/QBarLegendMarker \
-		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCharts/qbarlegendmarker.h \
-		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCharts/QLegendMarker \
-		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCharts/qlegendmarker.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCharts/QAbstractSeries \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCharts/qabstractseries.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCore/QObject \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCharts/QChart \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCharts/qchart.h \
 		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCharts/QLegend \
 		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCharts/qlegend.h \
 		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/QGraphicsWidget \
 		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qgraphicswidget.h \
 		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qgraphicslayoutitem.h \
 		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qgraphicsitem.h \
-		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCore/QObject \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtGui/QBrush \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCore/QMargins \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/QGraphicsView \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qgraphicsview.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtGui/qpainter.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qscrollarea.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qabstractscrollarea.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qgraphicsscene.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCharts/QBarCategoryAxis \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCharts/qbarcategoryaxis.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCharts/QValueAxis \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCharts/qvalueaxis.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCharts/QBarSet \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCharts/qbarset.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCharts/QBarLegendMarker \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCharts/qbarlegendmarker.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCharts/QLegendMarker \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCharts/qlegendmarker.h \
 		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCharts/QAbstractBarSeries \
 		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCharts/qabstractbarseries.h \
-		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCharts/QAbstractSeries \
-		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCharts/qabstractseries.h \
 		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCore/QStringList \
 		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCharts/QHorizontalStackedBarSeries \
-		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCharts/qhorizontalstackedbarseries.h \
-		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCharts/QChart \
-		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCharts/qchart.h \
-		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCore/QMargins
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCharts/qhorizontalstackedbarseries.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug/fcfs_op_dialog.o ../CPUSchedulers/fcfs_op_dialog.cpp
 
 debug/rr_op_dialog.o: ../CPUSchedulers/rr_op_dialog.cpp ../CPUSchedulers/rr_op_dialog.h \

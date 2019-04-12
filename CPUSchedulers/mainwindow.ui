@@ -7,11 +7,14 @@
     <x>0</x>
     <y>0</y>
     <width>619</width>
-    <height>322</height>
+    <height>312</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(240, 239, 255);</string>
   </property>
   <widget class="QWidget" name="centralWidget">
    <widget class="QPushButton" name="pushButton_sjf">
@@ -32,7 +35,7 @@
     <property name="styleSheet">
      <string notr="true">QPushButton {
 	border: 1px solid gray;
-	background-color: 	rgb(243, 91, 4);
+	background-color:  rgb(153, 157, 237);
 }
 QPushButton:pressed {
     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
@@ -62,7 +65,7 @@ QPushButton:pressed {
     <property name="styleSheet">
      <string notr="true">QPushButton {
 	border: 1px solid gray;
-	background-color: 	rgb(247, 184, 1);
+	background-color: 	rgb(153, 157, 237);
 
 }
 QPushButton:pressed {
@@ -93,7 +96,7 @@ QPushButton:pressed {
     <property name="styleSheet">
      <string notr="true">QPushButton {
 	border: 1px solid gray;
-	background-color: 	rgb(80, 68, 184);
+	background-color: 	rgb(247, 207, 87);
 }
 QPushButton:pressed {
     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
@@ -122,7 +125,7 @@ QPushButton:pressed {
     <property name="styleSheet">
      <string notr="true">QPushButton {
 	border: 1px solid gray;
-	background-color: 	rgb(118, 120, 237);
+	background-color: 	rgb(247, 207, 87);
 }
 QPushButton:pressed {
     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,

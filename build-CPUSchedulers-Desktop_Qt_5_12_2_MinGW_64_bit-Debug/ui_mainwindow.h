@@ -30,7 +30,8 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(619, 322);
+        MainWindow->resize(619, 312);
+        MainWindow->setStyleSheet(QString::fromUtf8("background-color: rgb(240, 239, 255);"));
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
         pushButton_sjf = new QPushButton(centralWidget);
@@ -42,7 +43,7 @@ public:
         pushButton_sjf->setFont(font);
         pushButton_sjf->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "	border: 1px solid gray;\n"
-"	background-color: 	rgb(243, 91, 4);\n"
+"	background-color:  rgb(153, 157, 237);\n"
 "}\n"
 "QPushButton:pressed {\n"
 "    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
@@ -55,7 +56,7 @@ public:
         pushButton_rr->setFont(font);
         pushButton_rr->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "	border: 1px solid gray;\n"
-"	background-color: 	rgb(247, 184, 1);\n"
+"	background-color: 	rgb(153, 157, 237);\n"
 "\n"
 "}\n"
 "QPushButton:pressed {\n"
@@ -69,7 +70,7 @@ public:
         pushButton_priority->setFont(font);
         pushButton_priority->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "	border: 1px solid gray;\n"
-"	background-color: 	rgb(80, 68, 184);\n"
+"	background-color: 	rgb(247, 207, 87);\n"
 "}\n"
 "QPushButton:pressed {\n"
 "    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
@@ -81,7 +82,7 @@ public:
         pushButton_fcfs->setFont(font);
         pushButton_fcfs->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "	border: 1px solid gray;\n"
-"	background-color: 	rgb(118, 120, 237);\n"
+"	background-color: 	rgb(247, 207, 87);\n"
 "}\n"
 "QPushButton:pressed {\n"
 "    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"

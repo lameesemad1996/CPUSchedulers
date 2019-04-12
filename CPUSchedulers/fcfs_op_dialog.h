@@ -14,7 +14,8 @@
 #include <iterator>
 #include <cstdlib>
 #include <QMainWindow>
-
+#include <QColor>
+#include<Qt>
 using namespace std;
 
 namespace Ui {

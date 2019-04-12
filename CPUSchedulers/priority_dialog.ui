@@ -13,12 +13,15 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(240, 239, 255);</string>
+  </property>
   <widget class="QCheckBox" name="checkBox">
    <property name="geometry">
     <rect>
      <x>40</x>
      <y>500</y>
-     <width>101</width>
+     <width>121</width>
      <height>20</height>
     </rect>
    </property>
@@ -27,6 +30,11 @@
      <horstretch>0</horstretch>
      <verstretch>0</verstretch>
     </sizepolicy>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+    </font>
    </property>
    <property name="text">
     <string>Preemptive</string>
@@ -58,6 +66,24 @@
      <verstretch>0</verstretch>
     </sizepolicy>
    </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+	border: 1px solid gray;
+	background-color:rgb(208, 201, 255);
+}
+QPushButton:pressed {
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #dadbde, stop: 1 #f6f7fa);
+}
+</string>
+   </property>
    <property name="text">
     <string>Add Process</string>
    </property>
@@ -76,6 +102,24 @@
      <horstretch>0</horstretch>
      <verstretch>0</verstretch>
     </sizepolicy>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+	border: 1px solid gray;
+	background-color: 	rgb(208, 201, 255);
+}
+QPushButton:pressed {
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #dadbde, stop: 1 #f6f7fa);
+}
+</string>
    </property>
    <property name="text">
     <string>GO</string>
