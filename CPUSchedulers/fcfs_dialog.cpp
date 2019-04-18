@@ -6,7 +6,7 @@
 #include <QLabel>
 #include <QLayout>
 #include <QLineEdit>
-#include<QHBoxLayout>
+#include <QHBoxLayout>
 #include <string>
 #include<iostream>
 #include <list>
@@ -21,6 +21,8 @@ FCFS_Dialog::FCFS_Dialog(QWidget *parent) :
     ui(new Ui::FCFS_Dialog)
 {
     ui->setupUi(this);
+    count = 0;
+    //length = 0;
 }
 
 FCFS_Dialog::~FCFS_Dialog()
@@ -28,12 +30,16 @@ FCFS_Dialog::~FCFS_Dialog()
     delete ui;
 }
 
-process* FCFS_Dialog::inputProcessesPtrs[20];
+
+process* FCFS_Dialog::inputProcessesPtrs[100];
 int FCFS_Dialog::length = 0;
+int FCFS_Dialog::lengthFlag[100] = {0};
+int FCFS_Dialog::lengthFlagIndex = 0;
 
 void FCFS_Dialog::createProcess()
 {
-    static int count = 0;
+    //static int count = 0;
+
     //processLabel
     QLabel* processLabel = new QLabel;
     QString countToString = QString::number(count);
@@ -79,8 +85,10 @@ void FCFS_Dialog::on_pushButton_addProcess_clicked()
 
 void FCFS_Dialog::on_pushButton_Go_clicked()
 {
+    FCFS_Dialog::lengthFlag[FCFS_Dialog::lengthFlagIndex] = FCFS_Dialog::length;
+
     //saving inputs
-    for(int i = 0; i <= length-1; i++)
+    for(int i = 0; i <= (((FCFS_Dialog::length) - (FCFS_Dialog::lengthFlag[FCFS_Dialog::lengthFlagIndex-1])) - 1); i++)
     {
         FCFS_Dialog::inputProcessesPtrs[i] = new process;
         FCFS_Dialog::inputProcessesPtrs[i]->runningTime = FCFS_Dialog::runLineEditsPtrs[i]->text().toLong();
@@ -88,11 +96,5 @@ void FCFS_Dialog::on_pushButton_Go_clicked()
     }
 
     FCFS_OP_Dialog::showOP();
-
-    /*
-  //opening new window
-    FCFS_OP_Dialog fcfsopDialog;
-    fcfsopDialog.setModal(true);
-    fcfsopDialog.exec();
-    */
+    FCFS_Dialog::lengthFlagIndex++;
 }

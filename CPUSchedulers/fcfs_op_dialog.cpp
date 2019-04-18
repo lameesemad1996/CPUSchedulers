@@ -22,7 +22,9 @@
 #include <iterator>
 #include <cstdlib>
 #include <QColor>
-#include<Qt>
+#include <QVBoxLayout>
+#include <QDockWidget>
+#include <Qt>
 
 using namespace std;
 
@@ -40,13 +42,18 @@ FCFS_OP_Dialog::~FCFS_OP_Dialog()
 
 //QMainWindow FCFS_OP_Dialog::window;
 
+
 list<process> FCFS_OP_Dialog::getInputs()
 {
+   FCFS_Dialog::lengthFlag[FCFS_Dialog::lengthFlagIndex] = FCFS_Dialog::length;
+
    list<process> inputDataList;
-   for (int i = 0; i < FCFS_Dialog::length ; i++)
+   for (int i = 0; i < ((FCFS_Dialog::length) - (FCFS_Dialog::lengthFlag[FCFS_Dialog::lengthFlagIndex-1])) ; i++)
    {
        inputDataList.push_back(*(FCFS_Dialog::inputProcessesPtrs[i]));
    }
+
+
    return inputDataList;
 }
 
@@ -57,11 +64,20 @@ list<slice> FCFS_OP_Dialog::getOP()
     return opList;
 }
 
+double FCFS_OP_Dialog::getWT()
+{
+    double result;
+    result = FCFSavgWaitingtime(FCFS_OP_Dialog::getInputs());
+    return result;
+}
 
 void FCFS_OP_Dialog::showOP()
 {
     list<slice> opList;
+    double WT;
     opList = getOP();
+    WT = getWT();
+
     list<slice>::iterator it = opList.begin();
     int prevEndTime = 0;
     //determining number of processes
@@ -109,7 +125,7 @@ void FCFS_OP_Dialog::showOP()
     //chart creation
     QtCharts::QChart *chart = new QtCharts::QChart();
     chart->addSeries(series);
-    chart->setTitle("Gantt Chart");
+    chart->setTitle("Avg Waiting Time: " + (QString::fromStdString(to_string(WT))));
 
     QtCharts::QValueAxis *axisX = new QtCharts::QValueAxis();
     axisX->setTickType(QtCharts::QValueAxis::TickType::TicksDynamic);

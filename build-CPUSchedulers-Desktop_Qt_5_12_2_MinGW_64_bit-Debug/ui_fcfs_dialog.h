@@ -35,7 +35,7 @@ public:
         pushButton_addProcess = new QPushButton(FCFS_Dialog);
         pushButton_addProcess->setObjectName(QString::fromUtf8("pushButton_addProcess"));
         pushButton_addProcess->setGeometry(QRect(10, 470, 891, 28));
-        QSizePolicy sizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
+        QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
         sizePolicy.setHeightForWidth(pushButton_addProcess->sizePolicy().hasHeightForWidth());

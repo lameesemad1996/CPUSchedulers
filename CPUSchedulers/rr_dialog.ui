@@ -20,7 +20,7 @@
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>475</y>
+     <y>480</y>
      <width>896</width>
      <height>28</height>
     </rect>
@@ -59,7 +59,7 @@ QPushButton:pressed {
      <x>10</x>
      <y>16</y>
      <width>896</width>
-     <height>452</height>
+     <height>421</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout_2"/>
@@ -99,6 +99,34 @@ QPushButton:pressed {
    </property>
    <property name="text">
     <string>GO</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="quantumTimeLineEdit">
+   <property name="geometry">
+    <rect>
+     <x>240</x>
+     <y>450</y>
+     <width>661</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>450</y>
+     <width>201</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Quantum Time</string>
    </property>
   </widget>
  </widget>

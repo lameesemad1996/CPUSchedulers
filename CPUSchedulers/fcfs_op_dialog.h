@@ -15,7 +15,8 @@
 #include <cstdlib>
 #include <QMainWindow>
 #include <QColor>
-#include<Qt>
+#include <Qt>
+
 using namespace std;
 
 namespace Ui {
@@ -31,6 +32,7 @@ public:
     ~FCFS_OP_Dialog();
     list<process> static getInputs();
     list<slice> static getOP();
+    double static getWT();
     void static showOP();
     static QMainWindow window;
 

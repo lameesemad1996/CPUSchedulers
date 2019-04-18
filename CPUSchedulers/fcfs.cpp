@@ -8,7 +8,10 @@
 
 using namespace std;
 
-
+process::process()
+{
+    progressTime = 0;
+}
 
 slice::slice()
 {
@@ -52,6 +55,11 @@ list<slice> FCFS(list<process> inputProcesses)
 
 double FCFSavgWaitingtime(list<process> inputProcesses)
 {
+    double sum = 0;
+    double avg = 0;
+    list<int> waitingTime;
+    list<int>::iterator it1;
+
     //sorting the input list of processes
     inputProcesses.sort();
 
@@ -60,10 +68,7 @@ double FCFSavgWaitingtime(list<process> inputProcesses)
     it = inputProcesses.begin();
     int currentTime = it->arrivalTime;
     int currentProcess = 0;
-    list<int> waitingTime;
-    list<int>::iterator it1;
-    double sum = 0;
-    double avg = 0;
+
 
     for (it = inputProcesses.begin(); it != inputProcesses.end(); ++it)
     {

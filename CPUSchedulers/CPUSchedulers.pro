@@ -36,7 +36,10 @@ SOURCES += \
     rr_op_dialog.cpp \
     sjf_op_dialog.cpp \
     priority_op_dialog.cpp \
-    fcfs.cpp
+    fcfs.cpp \
+    roundrobin.cpp \
+    priority.cpp \
+    sjf.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -48,7 +51,10 @@ HEADERS += \
     rr_op_dialog.h \
     sjf_op_dialog.h \
     priority_op_dialog.h \
-    fcfs.h
+    fcfs.h \
+    roundrobin.h \
+    priority.h \
+    sjf.h
 
 FORMS += \
         mainwindow.ui \

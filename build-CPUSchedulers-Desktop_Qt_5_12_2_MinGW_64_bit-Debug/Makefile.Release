@@ -57,7 +57,10 @@ SOURCES       = ../CPUSchedulers/main.cpp \
 		../CPUSchedulers/rr_op_dialog.cpp \
 		../CPUSchedulers/sjf_op_dialog.cpp \
 		../CPUSchedulers/priority_op_dialog.cpp \
-		../CPUSchedulers/fcfs.cpp release/moc_mainwindow.cpp \
+		../CPUSchedulers/fcfs.cpp \
+		../CPUSchedulers/roundrobin.cpp \
+		../CPUSchedulers/priority.cpp \
+		../CPUSchedulers/sjf.cpp release/moc_mainwindow.cpp \
 		release/moc_sjf_dialog.cpp \
 		release/moc_priority_dialog.cpp \
 		release/moc_rr_dialog.cpp \
@@ -77,6 +80,9 @@ OBJECTS       = release/main.o \
 		release/sjf_op_dialog.o \
 		release/priority_op_dialog.o \
 		release/fcfs.o \
+		release/roundrobin.o \
+		release/priority.o \
+		release/sjf.o \
 		release/moc_mainwindow.o \
 		release/moc_sjf_dialog.o \
 		release/moc_priority_dialog.o \
@@ -96,7 +102,10 @@ DIST          =  ../CPUSchedulers/mainwindow.h \
 		../CPUSchedulers/rr_op_dialog.h \
 		../CPUSchedulers/sjf_op_dialog.h \
 		../CPUSchedulers/priority_op_dialog.h \
-		../CPUSchedulers/fcfs.h ../CPUSchedulers/main.cpp \
+		../CPUSchedulers/fcfs.h \
+		../CPUSchedulers/roundrobin.h \
+		../CPUSchedulers/priority.h \
+		../CPUSchedulers/sjf.h ../CPUSchedulers/main.cpp \
 		../CPUSchedulers/mainwindow.cpp \
 		../CPUSchedulers/sjf_dialog.cpp \
 		../CPUSchedulers/priority_dialog.cpp \
@@ -106,7 +115,10 @@ DIST          =  ../CPUSchedulers/mainwindow.h \
 		../CPUSchedulers/rr_op_dialog.cpp \
 		../CPUSchedulers/sjf_op_dialog.cpp \
 		../CPUSchedulers/priority_op_dialog.cpp \
-		../CPUSchedulers/fcfs.cpp
+		../CPUSchedulers/fcfs.cpp \
+		../CPUSchedulers/roundrobin.cpp \
+		../CPUSchedulers/priority.cpp \
+		../CPUSchedulers/sjf.cpp
 QMAKE_TARGET  = CPUSchedulers
 DESTDIR        = release/ #avoid trailing-slash linebreak
 TARGET         = CPUSchedulers.exe
@@ -126,10 +138,10 @@ qmake: FORCE
 qmake_all: FORCE
 
 dist:
-	$(ZIP) CPUSchedulers.zip $(SOURCES) $(DIST) ../CPUSchedulers/CPUSchedulers.pro C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/features/spec_pre.prf C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/qdevice.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/features/device_config.prf C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/common/sanitize.conf C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/common/gcc-base.conf C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/common/g++-base.conf C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/common/angle.conf C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/common/windows-vulkan.conf C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/common/g++-win32.conf C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/qconfig.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_3danimation.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_3danimation_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_3dcore.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_3dcore_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_3dextras.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_3dextras_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_3dinput.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_3dinput_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_3dlogic.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_3dlogic_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_3dquick.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_3dquick_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_3dquickanimation.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_3dquickanimation_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_3dquickextras.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_3dquickextras_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_3dquickinput.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_3dquickinput_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_3dquickrender.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_3dquickrender_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_3dquickscene2d.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_3dquickscene2d_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_3drender.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_3drender_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_accessibility_support_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_axbase.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_axbase_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_axcontainer.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_axcontainer_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_axserver.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_axserver_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_bluetooth.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_bluetooth_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_bootstrap_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_charts.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_charts_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_concurrent.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_concurrent_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_core.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_core_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_dbus.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_dbus_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_designer.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_designer_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_designercomponents_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_devicediscovery_support_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_edid_support_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_egl_support_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_eventdispatcher_support_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_fb_support_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_fontdatabase_support_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_gamepad.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_gamepad_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_gui.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_gui_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_help.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_help_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_location.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_location_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_multimedia.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_multimedia_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_multimediawidgets.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_multimediawidgets_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_network.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_network_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_nfc.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_nfc_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_opengl.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_opengl_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_openglextensions.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_openglextensions_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_packetprotocol_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_platformcompositor_support_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_positioning.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_positioning_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_positioningquick.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_positioningquick_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_printsupport.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_printsupport_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_qml.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_qml_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_qmldebug_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_qmldevtools_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_qmltest.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_qmltest_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_qtmultimediaquicktools_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_quick.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_quick_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_quickcontrols2.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_quickcontrols2_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_quickparticles_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_quickshapes_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_quicktemplates2_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_quickwidgets.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_quickwidgets_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_remoteobjects.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_remoteobjects_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_repparser.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_repparser_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_scxml.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_scxml_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_sensors.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_sensors_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_serialbus.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_serialbus_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_serialport.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_serialport_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_sql.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_sql_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_svg.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_svg_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_testlib.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_testlib_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_texttospeech.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_texttospeech_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_theme_support_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_uiplugin.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_uitools.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_uitools_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_vulkan_support_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_webchannel.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_webchannel_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_websockets.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_websockets_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_widgets.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_widgets_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_windowsuiautomation_support_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_winextras.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_winextras_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_xml.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_xml_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_xmlpatterns.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_xmlpatterns_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/features/qt_functions.prf C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/features/qt_config.prf C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/win32-g++/qmake.conf C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/features/spec_post.prf .qmake.stash C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/features/exclusive_builds.prf C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/features/toolchain.prf C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/features/default_pre.prf C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/features/win32/default_pre.prf C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/features/resolve_config.prf C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/features/exclusive_builds_post.prf C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/features/default_post.prf C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/features/build_pass.prf C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/features/qml_debug.prf C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/features/precompile_header.prf C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/features/warn_on.prf C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/features/qt.prf C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/features/resources.prf C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/features/moc.prf C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/features/win32/opengl.prf C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/features/uic.prf C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/features/qmake_use.prf C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/features/file_copies.prf C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/features/win32/windows.prf C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/features/testcase_targets.prf C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/features/exceptions.prf C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/features/yacc.prf C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/features/lex.prf ../CPUSchedulers/CPUSchedulers.pro C:/Qt/Qt5.12.2/5.12.2/mingw73_64/lib/Qt5Charts.prl C:/Qt/Qt5.12.2/5.12.2/mingw73_64/lib/Qt5Widgets.prl C:/Qt/Qt5.12.2/5.12.2/mingw73_64/lib/Qt5Gui.prl C:/Qt/Qt5.12.2/5.12.2/mingw73_64/lib/Qt5Core.prl C:/Qt/Qt5.12.2/5.12.2/mingw73_64/lib/qtmain.prl    C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/features/data/dummy.cpp ../CPUSchedulers/mainwindow.h ../CPUSchedulers/sjf_dialog.h ../CPUSchedulers/priority_dialog.h ../CPUSchedulers/rr_dialog.h ../CPUSchedulers/fcfs_dialog.h ../CPUSchedulers/fcfs_op_dialog.h ../CPUSchedulers/rr_op_dialog.h ../CPUSchedulers/sjf_op_dialog.h ../CPUSchedulers/priority_op_dialog.h ../CPUSchedulers/fcfs.h  ../CPUSchedulers/main.cpp ../CPUSchedulers/mainwindow.cpp ../CPUSchedulers/sjf_dialog.cpp ../CPUSchedulers/priority_dialog.cpp ../CPUSchedulers/rr_dialog.cpp ../CPUSchedulers/fcfs_dialog.cpp ../CPUSchedulers/fcfs_op_dialog.cpp ../CPUSchedulers/rr_op_dialog.cpp ../CPUSchedulers/sjf_op_dialog.cpp ../CPUSchedulers/priority_op_dialog.cpp ../CPUSchedulers/fcfs.cpp ../CPUSchedulers/mainwindow.ui ../CPUSchedulers/sjf_dialog.ui ../CPUSchedulers/priority_dialog.ui ../CPUSchedulers/rr_dialog.ui ../CPUSchedulers/fcfs_dialog.ui ../CPUSchedulers/fcfs_op_dialog.ui ../CPUSchedulers/rr_op_dialog.ui ../CPUSchedulers/sjf_op_dialog.ui ../CPUSchedulers/priority_op_dialog.ui    
+	$(ZIP) CPUSchedulers.zip $(SOURCES) $(DIST) ../CPUSchedulers/CPUSchedulers.pro C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/features/spec_pre.prf C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/qdevice.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/features/device_config.prf C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/common/sanitize.conf C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/common/gcc-base.conf C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/common/g++-base.conf C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/common/angle.conf C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/common/windows-vulkan.conf C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/common/g++-win32.conf C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/qconfig.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_3danimation.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_3danimation_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_3dcore.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_3dcore_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_3dextras.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_3dextras_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_3dinput.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_3dinput_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_3dlogic.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_3dlogic_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_3dquick.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_3dquick_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_3dquickanimation.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_3dquickanimation_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_3dquickextras.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_3dquickextras_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_3dquickinput.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_3dquickinput_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_3dquickrender.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_3dquickrender_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_3dquickscene2d.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_3dquickscene2d_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_3drender.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_3drender_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_accessibility_support_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_axbase.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_axbase_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_axcontainer.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_axcontainer_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_axserver.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_axserver_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_bluetooth.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_bluetooth_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_bootstrap_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_charts.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_charts_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_concurrent.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_concurrent_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_core.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_core_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_dbus.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_dbus_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_designer.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_designer_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_designercomponents_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_devicediscovery_support_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_edid_support_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_egl_support_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_eventdispatcher_support_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_fb_support_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_fontdatabase_support_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_gamepad.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_gamepad_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_gui.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_gui_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_help.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_help_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_location.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_location_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_multimedia.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_multimedia_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_multimediawidgets.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_multimediawidgets_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_network.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_network_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_nfc.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_nfc_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_opengl.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_opengl_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_openglextensions.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_openglextensions_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_packetprotocol_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_platformcompositor_support_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_positioning.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_positioning_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_positioningquick.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_positioningquick_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_printsupport.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_printsupport_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_qml.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_qml_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_qmldebug_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_qmldevtools_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_qmltest.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_qmltest_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_qtmultimediaquicktools_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_quick.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_quick_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_quickcontrols2.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_quickcontrols2_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_quickparticles_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_quickshapes_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_quicktemplates2_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_quickwidgets.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_quickwidgets_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_remoteobjects.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_remoteobjects_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_repparser.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_repparser_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_scxml.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_scxml_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_sensors.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_sensors_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_serialbus.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_serialbus_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_serialport.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_serialport_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_sql.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_sql_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_svg.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_svg_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_testlib.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_testlib_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_texttospeech.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_texttospeech_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_theme_support_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_uiplugin.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_uitools.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_uitools_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_vulkan_support_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_webchannel.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_webchannel_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_websockets.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_websockets_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_widgets.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_widgets_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_windowsuiautomation_support_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_winextras.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_winextras_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_xml.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_xml_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_xmlpatterns.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/modules/qt_lib_xmlpatterns_private.pri C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/features/qt_functions.prf C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/features/qt_config.prf C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/win32-g++/qmake.conf C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/features/spec_post.prf .qmake.stash C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/features/exclusive_builds.prf C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/features/toolchain.prf C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/features/default_pre.prf C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/features/win32/default_pre.prf C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/features/resolve_config.prf C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/features/exclusive_builds_post.prf C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/features/default_post.prf C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/features/build_pass.prf C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/features/qml_debug.prf C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/features/precompile_header.prf C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/features/warn_on.prf C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/features/qt.prf C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/features/resources.prf C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/features/moc.prf C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/features/win32/opengl.prf C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/features/uic.prf C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/features/qmake_use.prf C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/features/file_copies.prf C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/features/win32/windows.prf C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/features/testcase_targets.prf C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/features/exceptions.prf C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/features/yacc.prf C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/features/lex.prf ../CPUSchedulers/CPUSchedulers.pro C:/Qt/Qt5.12.2/5.12.2/mingw73_64/lib/Qt5Charts.prl C:/Qt/Qt5.12.2/5.12.2/mingw73_64/lib/Qt5Widgets.prl C:/Qt/Qt5.12.2/5.12.2/mingw73_64/lib/Qt5Gui.prl C:/Qt/Qt5.12.2/5.12.2/mingw73_64/lib/Qt5Core.prl C:/Qt/Qt5.12.2/5.12.2/mingw73_64/lib/qtmain.prl    C:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/features/data/dummy.cpp ../CPUSchedulers/mainwindow.h ../CPUSchedulers/sjf_dialog.h ../CPUSchedulers/priority_dialog.h ../CPUSchedulers/rr_dialog.h ../CPUSchedulers/fcfs_dialog.h ../CPUSchedulers/fcfs_op_dialog.h ../CPUSchedulers/rr_op_dialog.h ../CPUSchedulers/sjf_op_dialog.h ../CPUSchedulers/priority_op_dialog.h ../CPUSchedulers/fcfs.h ../CPUSchedulers/roundrobin.h ../CPUSchedulers/priority.h ../CPUSchedulers/sjf.h  ../CPUSchedulers/main.cpp ../CPUSchedulers/mainwindow.cpp ../CPUSchedulers/sjf_dialog.cpp ../CPUSchedulers/priority_dialog.cpp ../CPUSchedulers/rr_dialog.cpp ../CPUSchedulers/fcfs_dialog.cpp ../CPUSchedulers/fcfs_op_dialog.cpp ../CPUSchedulers/rr_op_dialog.cpp ../CPUSchedulers/sjf_op_dialog.cpp ../CPUSchedulers/priority_op_dialog.cpp ../CPUSchedulers/fcfs.cpp ../CPUSchedulers/roundrobin.cpp ../CPUSchedulers/priority.cpp ../CPUSchedulers/sjf.cpp ../CPUSchedulers/mainwindow.ui ../CPUSchedulers/sjf_dialog.ui ../CPUSchedulers/priority_dialog.ui ../CPUSchedulers/rr_dialog.ui ../CPUSchedulers/fcfs_dialog.ui ../CPUSchedulers/fcfs_op_dialog.ui ../CPUSchedulers/rr_op_dialog.ui ../CPUSchedulers/sjf_op_dialog.ui ../CPUSchedulers/priority_op_dialog.ui    
 
 clean: compiler_clean 
-	-$(DEL_FILE) release/main.o release/mainwindow.o release/sjf_dialog.o release/priority_dialog.o release/rr_dialog.o release/fcfs_dialog.o release/fcfs_op_dialog.o release/rr_op_dialog.o release/sjf_op_dialog.o release/priority_op_dialog.o release/fcfs.o release/moc_mainwindow.o release/moc_sjf_dialog.o release/moc_priority_dialog.o release/moc_rr_dialog.o release/moc_fcfs_dialog.o release/moc_fcfs_op_dialog.o release/moc_rr_op_dialog.o release/moc_sjf_op_dialog.o release/moc_priority_op_dialog.o
+	-$(DEL_FILE) release/main.o release/mainwindow.o release/sjf_dialog.o release/priority_dialog.o release/rr_dialog.o release/fcfs_dialog.o release/fcfs_op_dialog.o release/rr_op_dialog.o release/sjf_op_dialog.o release/priority_op_dialog.o release/fcfs.o release/roundrobin.o release/priority.o release/sjf.o release/moc_mainwindow.o release/moc_sjf_dialog.o release/moc_priority_dialog.o release/moc_rr_dialog.o release/moc_fcfs_dialog.o release/moc_fcfs_op_dialog.o release/moc_rr_op_dialog.o release/moc_sjf_op_dialog.o release/moc_priority_op_dialog.o
 
 distclean: clean 
 	-$(DEL_FILE) .qmake.stash
@@ -502,6 +514,24 @@ release/moc_priority_dialog.cpp: ../CPUSchedulers/priority_dialog.h \
 		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCore/qfiledevice.h \
 		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtGui/qvector2d.h \
 		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtGui/qtouchdevice.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/QWidget \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/QLabel \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qlabel.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qframe.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/QLayout \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qlayout.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qlayoutitem.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qboxlayout.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qgridlayout.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/QLineEdit \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qlineedit.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtGui/qtextcursor.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtGui/qtextformat.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtGui/qpen.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtGui/qtextoption.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/QHBoxLayout \
+		../CPUSchedulers/fcfs.h \
+		../CPUSchedulers/priority.h \
 		release/moc_predefs.h \
 		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/bin/moc.exe
 	'C:\Qt\Qt5.12.2\5.12.2\mingw73_64\bin\moc.exe' $(DEFINES) --include 'E:/Computer Year 3/CPUSched/CPUSchedulers/build-CPUSchedulers-Desktop_Qt_5_12_2_MinGW_64_bit-Debug/release/moc_predefs.h' -IC:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/win32-g++ -I'E:/Computer Year 3/CPUSched/CPUSchedulers/CPUSchedulers' -IC:/Qt/Qt5.12.2/5.12.2/mingw73_64/include -IC:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCharts -IC:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets -IC:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtGui -IC:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtANGLE -IC:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCore -I. -IC:/Qt/Qt5.12.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Qt5.12.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Qt5.12.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Qt5.12.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Qt5.12.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Qt5.12.2/Tools/mingw730_64/x86_64-w64-mingw32/include ../CPUSchedulers/priority_dialog.h -o release/moc_priority_dialog.cpp
@@ -611,6 +641,23 @@ release/moc_rr_dialog.cpp: ../CPUSchedulers/rr_dialog.h \
 		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCore/qfiledevice.h \
 		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtGui/qvector2d.h \
 		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtGui/qtouchdevice.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/QWidget \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/QLabel \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qlabel.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qframe.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/QLayout \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qlayout.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qlayoutitem.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qboxlayout.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qgridlayout.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/QLineEdit \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qlineedit.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtGui/qtextcursor.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtGui/qtextformat.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtGui/qpen.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtGui/qtextoption.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/QHBoxLayout \
+		../CPUSchedulers/fcfs.h \
 		release/moc_predefs.h \
 		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/bin/moc.exe
 	'C:\Qt\Qt5.12.2\5.12.2\mingw73_64\bin\moc.exe' $(DEFINES) --include 'E:/Computer Year 3/CPUSched/CPUSchedulers/build-CPUSchedulers-Desktop_Qt_5_12_2_MinGW_64_bit-Debug/release/moc_predefs.h' -IC:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/win32-g++ -I'E:/Computer Year 3/CPUSched/CPUSchedulers/CPUSchedulers' -IC:/Qt/Qt5.12.2/5.12.2/mingw73_64/include -IC:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCharts -IC:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets -IC:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtGui -IC:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtANGLE -IC:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCore -I. -IC:/Qt/Qt5.12.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Qt5.12.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Qt5.12.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Qt5.12.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Qt5.12.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Qt5.12.2/Tools/mingw730_64/x86_64-w64-mingw32/include ../CPUSchedulers/rr_dialog.h -o release/moc_rr_dialog.cpp
@@ -868,6 +915,8 @@ release/moc_fcfs_op_dialog.cpp: ../CPUSchedulers/fcfs_op_dialog.h \
 		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qmainwindow.h \
 		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qtabwidget.h \
 		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtGui/qicon.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtGui/QColor \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCore/Qt \
 		release/moc_predefs.h \
 		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/bin/moc.exe
 	'C:\Qt\Qt5.12.2\5.12.2\mingw73_64\bin\moc.exe' $(DEFINES) --include 'E:/Computer Year 3/CPUSched/CPUSchedulers/build-CPUSchedulers-Desktop_Qt_5_12_2_MinGW_64_bit-Debug/release/moc_predefs.h' -IC:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/win32-g++ -I'E:/Computer Year 3/CPUSched/CPUSchedulers/CPUSchedulers' -IC:/Qt/Qt5.12.2/5.12.2/mingw73_64/include -IC:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCharts -IC:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets -IC:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtGui -IC:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtANGLE -IC:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCore -I. -IC:/Qt/Qt5.12.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Qt5.12.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Qt5.12.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Qt5.12.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Qt5.12.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Qt5.12.2/Tools/mingw730_64/x86_64-w64-mingw32/include ../CPUSchedulers/fcfs_op_dialog.h -o release/moc_fcfs_op_dialog.cpp
@@ -977,6 +1026,30 @@ release/moc_rr_op_dialog.cpp: ../CPUSchedulers/rr_op_dialog.h \
 		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCore/qfiledevice.h \
 		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtGui/qvector2d.h \
 		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtGui/qtouchdevice.h \
+		../CPUSchedulers/fcfs.h \
+		../CPUSchedulers/rr_dialog.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/QWidget \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/QLabel \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qlabel.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qframe.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/QLayout \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qlayout.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qlayoutitem.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qboxlayout.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qgridlayout.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/QLineEdit \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qlineedit.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtGui/qtextcursor.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtGui/qtextformat.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtGui/qpen.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtGui/qtextoption.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/QHBoxLayout \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/QMainWindow \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qmainwindow.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qtabwidget.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtGui/qicon.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtGui/QColor \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCore/Qt \
 		release/moc_predefs.h \
 		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/bin/moc.exe
 	'C:\Qt\Qt5.12.2\5.12.2\mingw73_64\bin\moc.exe' $(DEFINES) --include 'E:/Computer Year 3/CPUSched/CPUSchedulers/build-CPUSchedulers-Desktop_Qt_5_12_2_MinGW_64_bit-Debug/release/moc_predefs.h' -IC:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/win32-g++ -I'E:/Computer Year 3/CPUSched/CPUSchedulers/CPUSchedulers' -IC:/Qt/Qt5.12.2/5.12.2/mingw73_64/include -IC:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCharts -IC:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets -IC:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtGui -IC:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtANGLE -IC:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCore -I. -IC:/Qt/Qt5.12.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Qt5.12.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Qt5.12.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Qt5.12.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Qt5.12.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Qt5.12.2/Tools/mingw730_64/x86_64-w64-mingw32/include ../CPUSchedulers/rr_op_dialog.h -o release/moc_rr_op_dialog.cpp
@@ -1195,6 +1268,31 @@ release/moc_priority_op_dialog.cpp: ../CPUSchedulers/priority_op_dialog.h \
 		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCore/qfiledevice.h \
 		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtGui/qvector2d.h \
 		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtGui/qtouchdevice.h \
+		../CPUSchedulers/fcfs.h \
+		../CPUSchedulers/priority_dialog.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/QWidget \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/QLabel \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qlabel.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qframe.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/QLayout \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qlayout.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qlayoutitem.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qboxlayout.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qgridlayout.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/QLineEdit \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qlineedit.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtGui/qtextcursor.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtGui/qtextformat.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtGui/qpen.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtGui/qtextoption.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/QHBoxLayout \
+		../CPUSchedulers/priority.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/QMainWindow \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qmainwindow.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qtabwidget.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtGui/qicon.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtGui/QColor \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCore/Qt \
 		release/moc_predefs.h \
 		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/bin/moc.exe
 	'C:\Qt\Qt5.12.2\5.12.2\mingw73_64\bin\moc.exe' $(DEFINES) --include 'E:/Computer Year 3/CPUSched/CPUSchedulers/build-CPUSchedulers-Desktop_Qt_5_12_2_MinGW_64_bit-Debug/release/moc_predefs.h' -IC:/Qt/Qt5.12.2/5.12.2/mingw73_64/mkspecs/win32-g++ -I'E:/Computer Year 3/CPUSched/CPUSchedulers/CPUSchedulers' -IC:/Qt/Qt5.12.2/5.12.2/mingw73_64/include -IC:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCharts -IC:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets -IC:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtGui -IC:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtANGLE -IC:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCore -I. -IC:/Qt/Qt5.12.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Qt5.12.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Qt5.12.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Qt5.12.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Qt5.12.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Qt5.12.2/Tools/mingw730_64/x86_64-w64-mingw32/include ../CPUSchedulers/priority_op_dialog.h -o release/moc_priority_op_dialog.cpp
@@ -1531,6 +1629,7 @@ release/mainwindow.o: ../CPUSchedulers/mainwindow.cpp ../CPUSchedulers/mainwindo
 		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qabstractbutton.h \
 		../CPUSchedulers/sjf_dialog.h \
 		../CPUSchedulers/priority_dialog.h \
+		../CPUSchedulers/priority.h \
 		../CPUSchedulers/rr_dialog.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release/mainwindow.o ../CPUSchedulers/mainwindow.cpp
 
@@ -1779,6 +1878,24 @@ release/priority_dialog.o: ../CPUSchedulers/priority_dialog.cpp ../CPUSchedulers
 		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCore/qfiledevice.h \
 		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtGui/qvector2d.h \
 		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtGui/qtouchdevice.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/QWidget \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/QLabel \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qlabel.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qframe.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/QLayout \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qlayout.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qlayoutitem.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qboxlayout.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qgridlayout.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/QLineEdit \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qlineedit.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtGui/qtextcursor.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtGui/qtextformat.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtGui/qpen.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtGui/qtextoption.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/QHBoxLayout \
+		../CPUSchedulers/fcfs.h \
+		../CPUSchedulers/priority.h \
 		ui_priority_dialog.h \
 		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCore/QVariant \
 		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/QApplication \
@@ -1795,23 +1912,12 @@ release/priority_dialog.o: ../CPUSchedulers/priority_dialog.cpp ../CPUSchedulers
 		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/QPushButton \
 		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qpushbutton.h \
 		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/QVBoxLayout \
-		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qboxlayout.h \
-		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qlayout.h \
-		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qlayoutitem.h \
-		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qgridlayout.h \
-		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/QWidget \
 		../CPUSchedulers/priority_op_dialog.h \
-		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/QLabel \
-		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qlabel.h \
-		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qframe.h \
-		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/QLayout \
-		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/QLineEdit \
-		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qlineedit.h \
-		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtGui/qtextcursor.h \
-		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtGui/qtextformat.h \
-		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtGui/qpen.h \
-		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtGui/qtextoption.h \
-		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/QHBoxLayout
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/QMainWindow \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qmainwindow.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qtabwidget.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtGui/QColor \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCore/Qt
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release/priority_dialog.o ../CPUSchedulers/priority_dialog.cpp
 
 release/rr_dialog.o: ../CPUSchedulers/rr_dialog.cpp ../CPUSchedulers/rr_dialog.h \
@@ -1919,6 +2025,23 @@ release/rr_dialog.o: ../CPUSchedulers/rr_dialog.cpp ../CPUSchedulers/rr_dialog.h
 		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCore/qfiledevice.h \
 		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtGui/qvector2d.h \
 		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtGui/qtouchdevice.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/QWidget \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/QLabel \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qlabel.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qframe.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/QLayout \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qlayout.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qlayoutitem.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qboxlayout.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qgridlayout.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/QLineEdit \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qlineedit.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtGui/qtextcursor.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtGui/qtextformat.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtGui/qpen.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtGui/qtextoption.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/QHBoxLayout \
+		../CPUSchedulers/fcfs.h \
 		ui_rr_dialog.h \
 		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCore/QVariant \
 		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/QApplication \
@@ -1933,23 +2056,12 @@ release/rr_dialog.o: ../CPUSchedulers/rr_dialog.cpp ../CPUSchedulers/rr_dialog.h
 		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qabstractbutton.h \
 		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtGui/qicon.h \
 		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/QVBoxLayout \
-		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qboxlayout.h \
-		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qlayout.h \
-		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qlayoutitem.h \
-		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qgridlayout.h \
-		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/QWidget \
 		../CPUSchedulers/rr_op_dialog.h \
-		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/QLabel \
-		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qlabel.h \
-		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qframe.h \
-		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/QLayout \
-		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/QLineEdit \
-		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qlineedit.h \
-		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtGui/qtextcursor.h \
-		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtGui/qtextformat.h \
-		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtGui/qpen.h \
-		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtGui/qtextoption.h \
-		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/QHBoxLayout
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/QMainWindow \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qmainwindow.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qtabwidget.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtGui/QColor \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCore/Qt
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release/rr_dialog.o ../CPUSchedulers/rr_dialog.cpp
 
 release/fcfs_dialog.o: ../CPUSchedulers/fcfs_dialog.cpp ../CPUSchedulers/fcfs_dialog.h \
@@ -2091,7 +2203,9 @@ release/fcfs_dialog.o: ../CPUSchedulers/fcfs_dialog.cpp ../CPUSchedulers/fcfs_di
 		../CPUSchedulers/fcfs_op_dialog.h \
 		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/QMainWindow \
 		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qmainwindow.h \
-		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qtabwidget.h
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qtabwidget.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtGui/QColor \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCore/Qt
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release/fcfs_dialog.o ../CPUSchedulers/fcfs_dialog.cpp
 
 release/fcfs_op_dialog.o: ../CPUSchedulers/fcfs_op_dialog.cpp ../CPUSchedulers/fcfs_op_dialog.h \
@@ -2221,6 +2335,8 @@ release/fcfs_op_dialog.o: ../CPUSchedulers/fcfs_op_dialog.cpp ../CPUSchedulers/f
 		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qmainwindow.h \
 		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qtabwidget.h \
 		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtGui/qicon.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtGui/QColor \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCore/Qt \
 		ui_fcfs_op_dialog.h \
 		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCore/QVariant \
 		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/QApplication \
@@ -2274,7 +2390,10 @@ release/fcfs_op_dialog.o: ../CPUSchedulers/fcfs_op_dialog.cpp ../CPUSchedulers/f
 		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCharts/qabstractbarseries.h \
 		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCore/QStringList \
 		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCharts/QHorizontalStackedBarSeries \
-		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCharts/qhorizontalstackedbarseries.h
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCharts/qhorizontalstackedbarseries.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/QVBoxLayout \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/QDockWidget \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qdockwidget.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release/fcfs_op_dialog.o ../CPUSchedulers/fcfs_op_dialog.cpp
 
 release/rr_op_dialog.o: ../CPUSchedulers/rr_op_dialog.cpp ../CPUSchedulers/rr_op_dialog.h \
@@ -2382,6 +2501,30 @@ release/rr_op_dialog.o: ../CPUSchedulers/rr_op_dialog.cpp ../CPUSchedulers/rr_op
 		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCore/qfiledevice.h \
 		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtGui/qvector2d.h \
 		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtGui/qtouchdevice.h \
+		../CPUSchedulers/fcfs.h \
+		../CPUSchedulers/rr_dialog.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/QWidget \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/QLabel \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qlabel.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qframe.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/QLayout \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qlayout.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qlayoutitem.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qboxlayout.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qgridlayout.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/QLineEdit \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qlineedit.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtGui/qtextcursor.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtGui/qtextformat.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtGui/qpen.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtGui/qtextoption.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/QHBoxLayout \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/QMainWindow \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qmainwindow.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qtabwidget.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtGui/qicon.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtGui/QColor \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCore/Qt \
 		ui_rr_op_dialog.h \
 		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCore/QVariant \
 		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/QApplication \
@@ -2392,7 +2535,51 @@ release/rr_op_dialog.o: ../CPUSchedulers/rr_op_dialog.cpp ../CPUSchedulers/rr_op
 		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtGui/qguiapplication.h \
 		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtGui/qinputmethod.h \
 		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/QDialogButtonBox \
-		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qdialogbuttonbox.h
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qdialogbuttonbox.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCharts/QChartView \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCharts/qchartview.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCharts/QAbstractAxis \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCharts/qabstractaxis.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCharts/QChartGlobal \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCharts/qchartglobal.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCore/QtGlobal \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtGui/QPen \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtGui/QFont \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCharts/QAbstractSeries \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCharts/qabstractseries.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCore/QObject \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCharts/QChart \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCharts/qchart.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCharts/QLegend \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCharts/qlegend.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/QGraphicsWidget \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qgraphicswidget.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qgraphicslayoutitem.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qgraphicsitem.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtGui/QBrush \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCore/QMargins \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/QGraphicsView \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qgraphicsview.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtGui/qpainter.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qscrollarea.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qabstractscrollarea.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qgraphicsscene.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCharts/QBarCategoryAxis \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCharts/qbarcategoryaxis.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCharts/QValueAxis \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCharts/qvalueaxis.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCharts/QBarSet \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCharts/qbarset.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCharts/QBarLegendMarker \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCharts/qbarlegendmarker.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCharts/QLegendMarker \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCharts/qlegendmarker.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCharts/QAbstractBarSeries \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCharts/qabstractbarseries.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCore/QStringList \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCharts/QHorizontalStackedBarSeries \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCharts/qhorizontalstackedbarseries.h \
+		../CPUSchedulers/roundrobin.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release/rr_op_dialog.o ../CPUSchedulers/rr_op_dialog.cpp
 
 release/sjf_op_dialog.o: ../CPUSchedulers/sjf_op_dialog.cpp ../CPUSchedulers/sjf_op_dialog.h \
@@ -2618,6 +2805,31 @@ release/priority_op_dialog.o: ../CPUSchedulers/priority_op_dialog.cpp ../CPUSche
 		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCore/qfiledevice.h \
 		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtGui/qvector2d.h \
 		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtGui/qtouchdevice.h \
+		../CPUSchedulers/fcfs.h \
+		../CPUSchedulers/priority_dialog.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/QWidget \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/QLabel \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qlabel.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qframe.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/QLayout \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qlayout.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qlayoutitem.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qboxlayout.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qgridlayout.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/QLineEdit \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qlineedit.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtGui/qtextcursor.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtGui/qtextformat.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtGui/qpen.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtGui/qtextoption.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/QHBoxLayout \
+		../CPUSchedulers/priority.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/QMainWindow \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qmainwindow.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qtabwidget.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtGui/qicon.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtGui/QColor \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCore/Qt \
 		ui_priority_op_dialog.h \
 		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCore/QVariant \
 		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/QApplication \
@@ -2628,11 +2840,66 @@ release/priority_op_dialog.o: ../CPUSchedulers/priority_op_dialog.cpp ../CPUSche
 		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtGui/qguiapplication.h \
 		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtGui/qinputmethod.h \
 		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/QDialogButtonBox \
-		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qdialogbuttonbox.h
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qdialogbuttonbox.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCharts/QChartView \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCharts/qchartview.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCharts/QAbstractAxis \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCharts/qabstractaxis.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCharts/QChartGlobal \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCharts/qchartglobal.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCore/QtGlobal \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtGui/QPen \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtGui/QFont \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCharts/QAbstractSeries \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCharts/qabstractseries.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCore/QObject \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCharts/QChart \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCharts/qchart.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCharts/QLegend \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCharts/qlegend.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/QGraphicsWidget \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qgraphicswidget.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qgraphicslayoutitem.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qgraphicsitem.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtGui/QBrush \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCore/QMargins \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/QGraphicsView \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qgraphicsview.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtGui/qpainter.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qscrollarea.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qabstractscrollarea.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtWidgets/qgraphicsscene.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCharts/QBarCategoryAxis \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCharts/qbarcategoryaxis.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCharts/QValueAxis \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCharts/qvalueaxis.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCharts/QBarSet \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCharts/qbarset.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCharts/QBarLegendMarker \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCharts/qbarlegendmarker.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCharts/QLegendMarker \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCharts/qlegendmarker.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCharts/QAbstractBarSeries \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCharts/qabstractbarseries.h \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCore/QStringList \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCharts/QHorizontalStackedBarSeries \
+		C:/Qt/Qt5.12.2/5.12.2/mingw73_64/include/QtCharts/qhorizontalstackedbarseries.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release/priority_op_dialog.o ../CPUSchedulers/priority_op_dialog.cpp
 
 release/fcfs.o: ../CPUSchedulers/fcfs.cpp ../CPUSchedulers/fcfs.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release/fcfs.o ../CPUSchedulers/fcfs.cpp
+
+release/roundrobin.o: ../CPUSchedulers/roundrobin.cpp ../CPUSchedulers/roundrobin.h \
+		../CPUSchedulers/fcfs.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release/roundrobin.o ../CPUSchedulers/roundrobin.cpp
+
+release/priority.o: ../CPUSchedulers/priority.cpp ../CPUSchedulers/fcfs.h \
+		../CPUSchedulers/priority.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release/priority.o ../CPUSchedulers/priority.cpp
+
+release/sjf.o: ../CPUSchedulers/sjf.cpp ../CPUSchedulers/fcfs.h \
+		../CPUSchedulers/sjf.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release/sjf.o ../CPUSchedulers/sjf.cpp
 
 release/moc_mainwindow.o: release/moc_mainwindow.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release/moc_mainwindow.o release/moc_mainwindow.cpp

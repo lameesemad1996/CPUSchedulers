@@ -1,6 +1,7 @@
 #include "priority_dialog.h"
 #include "ui_priority_dialog.h"
 #include "priority_op_dialog.h"
+#include "fcfs.h"
 #include <QWidget>
 #include <QLabel>
 #include <QLayout>
@@ -8,6 +9,12 @@
 #include<QHBoxLayout>
 #include <string>
 #include<iostream>
+#include <list>
+#include <iterator>
+#include <cstdlib>
+#include <QMainWindow>
+#include "priority.h"
+
 using namespace std;
 
 Priority_Dialog::Priority_Dialog(QWidget *parent) :
@@ -15,6 +22,8 @@ Priority_Dialog::Priority_Dialog(QWidget *parent) :
     ui(new Ui::Priority_Dialog)
 {
     ui->setupUi(this);
+    count = 0;
+
 }
 
 Priority_Dialog::~Priority_Dialog()
@@ -22,10 +31,14 @@ Priority_Dialog::~Priority_Dialog()
     delete ui;
 }
 
+process* Priority_Dialog::inputProcessesPtrs[100];
+int Priority_Dialog::length = 0;
+int Priority_Dialog::lengthFlag[100] = {0};
+int Priority_Dialog::lengthFlagIndex = 0;
 
 void Priority_Dialog::createProcess()
 {
-    static int count = 0;
+    //static int count = 0;
 
     //processLabel
     QLabel* processLabel = new QLabel;
@@ -36,18 +49,22 @@ void Priority_Dialog::createProcess()
     //running time
     QLabel* runLabel = new QLabel;
     QLineEdit* runLineEdit = new QLineEdit;
+    runLineEditsPtrs[count] = runLineEdit;
     runLabel->setText("Running Time:");
 
     //arrival time
     QLabel* arriveLabel = new QLabel;
     QLineEdit* arriveLineEdit = new QLineEdit;
+    arriveLineEditsPtrs[count] = arriveLineEdit;
     arriveLabel->setText("Arrival Time:");
 
-    //burst time
+    //priority
     QLabel* priorityLabel = new QLabel;
     QLineEdit* priorityLineEdit = new QLineEdit;
+    priorityLineEditsPtrs[count] = priorityLineEdit;
     priorityLabel->setText("Priority:");
 
+    Priority_Dialog::length++;
     count++;
 
     //creating layouts
@@ -83,7 +100,18 @@ void Priority_Dialog::on_checkBox_stateChanged(int arg1)
 
 void Priority_Dialog::on_pushButton_Go_clicked()
 {
-    Priority_OP_Dialog priorityopDialog;
-    priorityopDialog.setModal(true);
-    priorityopDialog.exec();
+    Priority_Dialog::lengthFlag[Priority_Dialog::lengthFlagIndex] = Priority_Dialog::length;
+
+    //saving inputs
+    for(int i = 0; i <= (((Priority_Dialog::length) - (Priority_Dialog::lengthFlag[Priority_Dialog::lengthFlagIndex-1])) - 1); i++)
+    {
+        Priority_Dialog::inputProcessesPtrs[i] = new process;
+        Priority_Dialog::inputProcessesPtrs[i]->runningTime = Priority_Dialog::runLineEditsPtrs[i]->text().toLong();
+        Priority_Dialog::inputProcessesPtrs[i]->arrivalTime = Priority_Dialog::arriveLineEditsPtrs[i]->text().toLong();
+        Priority_Dialog::inputProcessesPtrs[i]->priority = Priority_Dialog::priorityLineEditsPtrs[i]->text().toLong();
+    }
+
+    Priority_OP_Dialog::showOP();
+    Priority_Dialog::lengthFlagIndex++;
+
 }

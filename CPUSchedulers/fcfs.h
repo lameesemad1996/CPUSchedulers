@@ -22,8 +22,13 @@ public:
 class process
 {
 public:
+    string processName;
     int runningTime;
     int arrivalTime;
+    int progressTime;
+    int priority;
+
+    process();
 };
 
 //Process class comparison operator used in sort definition: comparison by arrival time

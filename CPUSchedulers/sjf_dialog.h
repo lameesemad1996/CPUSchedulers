@@ -2,7 +2,17 @@
 #define SJF_DIALOG_H
 
 #include <QDialog>
+#include <QWidget>
+#include <QLabel>
+#include <QLayout>
+#include <QLineEdit>
+#include<QHBoxLayout>
+#include <string>
+#include<iostream>
+#include "fcfs.h"
+#include "sjf.h"
 
+using namespace std;
 namespace Ui {
 class SJF_Dialog;
 }
@@ -15,6 +25,14 @@ public:
     explicit SJF_Dialog(QWidget *parent = nullptr);
     ~SJF_Dialog();
     void createProcess();
+    QLineEdit* runLineEditsPtrs[20];
+    QLineEdit* arriveLineEditsPtrs[20];
+    static process* inputProcessesPtrs[100];
+    static int length;
+    int count;
+    static int lengthFlagIndex;
+    static int lengthFlag[100];
+
 
 private slots:
 

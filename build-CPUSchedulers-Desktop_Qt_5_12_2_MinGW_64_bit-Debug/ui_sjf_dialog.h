@@ -32,7 +32,7 @@ public:
     {
         if (SJF_Dialog->objectName().isEmpty())
             SJF_Dialog->setObjectName(QString::fromUtf8("SJF_Dialog"));
-        SJF_Dialog->resize(883, 556);
+        SJF_Dialog->resize(877, 556);
         SJF_Dialog->setStyleSheet(QString::fromUtf8("background-color: rgb(240, 239, 255);"));
         verticalLayoutWidget = new QWidget(SJF_Dialog);
         verticalLayoutWidget->setObjectName(QString::fromUtf8("verticalLayoutWidget"));
