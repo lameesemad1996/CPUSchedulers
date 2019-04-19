@@ -12,7 +12,7 @@ using namespace std;
 
 
 
-list<slice> RoundRobin(list<process> inputProcesses, int quantum);
+list<slice> RoundRobin(list<process> inputProcesses, int quantum, double & waitingTime);
 
 
 #endif // ROUNDROBIN_H

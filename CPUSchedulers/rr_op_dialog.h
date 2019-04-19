@@ -33,7 +33,7 @@ public:
     explicit RR_OP_Dialog(QWidget *parent = nullptr);
     ~RR_OP_Dialog();
     list<process> static getInputs();
-    list<slice> static getOP();
+    list<slice> static getOP(double &WT);
     void static showOP();
     static QMainWindow window;
 

@@ -52,17 +52,18 @@ list<process> RR_OP_Dialog::getInputs()
    return inputDataList;
 }
 
-list<slice> RR_OP_Dialog::getOP()
-{
+list<slice> RR_OP_Dialog::getOP(double &WT)
+{    
     list<slice> opList;
-    opList = RoundRobin(RR_OP_Dialog::getInputs(), RR_Dialog::quantumTime);
+    opList = RoundRobin(RR_OP_Dialog::getInputs(), RR_Dialog::quantumTime, WT);
     return opList;
 }
 
 void RR_OP_Dialog::showOP()
 {
     list<slice> opList;
-    opList = getOP();
+    double WT;
+    opList = getOP(WT);
     list<slice>::iterator it = opList.begin();
     int prevEndTime = 0;
     string prevProcessNames[20];
@@ -146,7 +147,7 @@ void RR_OP_Dialog::showOP()
     //chart creation
     QtCharts::QChart *chart = new QtCharts::QChart();
     chart->addSeries(series);
-    chart->setTitle("Gantt Chart");
+    chart->setTitle("Avg Waiting Time: " + (QString::fromStdString(to_string(WT))));
 
     QtCharts::QValueAxis *axisX = new QtCharts::QValueAxis();
     axisX->setTickType(QtCharts::QValueAxis::TickType::TicksDynamic);

@@ -8,8 +8,11 @@
 
 using namespace std;
 
-list<slice> RoundRobin(list<process> inputProcesses, int quantum)
+list<slice> RoundRobin(list<process> inputProcesses, int quantum, double & waitingTime)
 {
+    waitingTime = 0;
+    double numOfProccesses = inputProcesses.size();
+
     //Returnable
     list<slice> slices;
     //Queue for arrived processes
@@ -63,14 +66,18 @@ list<slice> RoundRobin(list<process> inputProcesses, int quantum)
             const int timeRemainingInCurrProcess = CurrentProcess.runningTime - CurrentProcess.progressTime;
             if(timeRemainingInCurrProcess <= quantum)
             {
-
+                //Last run for the process here
                 CurrentSlice.processName = CurrentProcess.processName;
                 CurrentSlice.startTime = time;
                 time += timeRemainingInCurrProcess;
                 CurrentSlice.endTime = time;
+
+                //Waiting time = finishTime - burst - arival
+                waitingTime += CurrentSlice.endTime - CurrentProcess.runningTime - CurrentProcess.arrivalTime;
             }
             else
             {
+                //Process still not finished
                 CurrentSlice.processName = CurrentProcess.processName;
                 CurrentSlice.startTime = time;
                 time += quantum;
@@ -86,8 +93,6 @@ list<slice> RoundRobin(list<process> inputProcesses, int quantum)
             time++;
         }
     }
-
+    waitingTime /= numOfProccesses;
     return slices;
 }
-
-
